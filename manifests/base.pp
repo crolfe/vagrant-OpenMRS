@@ -20,21 +20,19 @@ package { jdk:
     },
 }
 
-class mysql {
-    package {
-        ["mysql-client", "mysql-server", "libmysqlclient-dev"]:
-            ensure => installed, 
+package {
+    ["mysql-client", "mysql-server", "libmysqlclient-dev"]:
+        ensure => installed, 
     }
 
-    service { "mysql":
-        ensure => running,
-        require => Package["mysql"]
-    }
+service { "mysql":
+    ensure => running,
+    require => Package["mysql-server"]
+}
 
-# this isn't setting the PW correctly, but the command works if entered directly?
-    exec { "set-mysql-password":
-        path    => ["/bin", "/usr/bin"],
-        command => "mysqladmin -u root password OpenMRS",
-        require => Service["mysql"],
-    }
- }
+exec { "set-mysql-password":
+    path    => ["/bin", "/usr/bin"],
+    command => "mysqladmin -u root password OpenMRS",
+    require => Service["mysql"],
+}
+
