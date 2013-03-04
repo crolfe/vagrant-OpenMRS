@@ -15,4 +15,4 @@ source .rvmrc
 gem list | grep bundler || gem install bundler --version 1.0.21 --no-rdo --no-ri
 bundle check || bundle install
 
-#vagrant up && vagrant provision
+vagrant up && vagrant provision
