@@ -1,7 +1,12 @@
-exec { "apt-get update":
-    path => "/usr/bin"
+stage { 'first':
+    before => Stage['main'],
 }
 
+class { "apt_get::update" :
+    stage  => first,
+}
+
+include apt_get::update
 include git
 include vim
 include mysql
