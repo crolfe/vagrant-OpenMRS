@@ -12,3 +12,4 @@ include vim
 include mysql
 include tomcat
 include openmrs
+include avahi-daemon
