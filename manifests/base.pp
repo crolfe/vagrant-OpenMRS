@@ -11,3 +11,4 @@ include git
 include vim
 include mysql
 include tomcat
+include openmrs

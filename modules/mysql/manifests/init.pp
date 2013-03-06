@@ -8,9 +8,9 @@ class mysql {
         require => Package["mysql-server"]
     }
 
-  exec { "set-mysql-password":
+    exec { "set-mysql-password":
         path    => ["/bin", "/usr/bin"],
         command => "mysqladmin -u root password OpenMRS",
-        require => Service["mysql"],
+        notify => Service["mysql"],
     }
 }
