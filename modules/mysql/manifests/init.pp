@@ -1,16 +1,14 @@
 class mysql {
-    package { ["mysql-client", "mysql-server", "libmysqlclient-dev"]:
-          ensure => installed,
-      }
+  $password = "OpenMRS"
+  package { "mysql-client": ensure => installed }
+  package { "mysql-server": ensure => installed }
+  package { "libmysqlclient-dev": ensure => installed }
 
-    service { "mysql":
-        ensure => running,
-        require => Package["mysql-server"]
-    }
-
-    exec { "set-mysql-password":
-        path    => ["/bin", "/usr/bin"],
-        command => "mysqladmin -u root password OpenMRS",
-        notify => Service["mysql"],
-    }
+  exec { "Set MySQL server root password":
+    subscribe => [ Package["mysql-server"], Package["mysql-client"], Package["libmysqlclient-dev"] ],
+    refreshonly => true,
+    unless => "mysqladmin -uroot -p$password status",
+    path => "/bin:/usr/bin",
+    command => "mysqladmin -uroot password $password",
+  }
 }
