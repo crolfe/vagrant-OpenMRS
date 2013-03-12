@@ -1,12 +1,21 @@
 stage { 'first':
-    before => Stage['main'],
+    before => Stage['second'],
 }
 
-class { "apt_get::update" :
+stage { 'second':
+    before => Stage['main']
+}
+
+class { "apt_get::update":
     stage  => first,
 }
 
+class { "jdk":
+    stage => second,
+}
+
 include apt_get::update
+include jdk
 include git
 include vim
 include mysql

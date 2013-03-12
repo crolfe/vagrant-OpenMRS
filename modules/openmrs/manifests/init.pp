@@ -1,4 +1,3 @@
-
 define download($uri, $timeout = 300) {
   exec { "wget $uri":
     command => "/usr/bin/wget -q '$uri' -O $name",
@@ -8,7 +7,7 @@ define download($uri, $timeout = 300) {
 }
 
 class openmrs {
-  $version = '1.9.2'
+  $version = '1.9.3'
   $stage = "/tmp/openmrs-${version}.war"
   $target = '/var/lib/tomcat6/webapps/openmrs.war'
 
@@ -20,6 +19,7 @@ class openmrs {
     uri => "http://downloads.sourceforge.net/project/openmrs/releases/OpenMRS_${version}/openmrs.war",
     timeout => 900,
     require => File["/tmp"],
+    
   }
 
     file { '/var/lib/tomcat6/webapps':
@@ -55,10 +55,5 @@ class openmrs {
     source => "file://${::work_dir}/modules/openmrs/files/openmrs.sql",
     owner => "root",
     group => "root",
-  }
-
-  exec { "import_openmrs_data":
-    command => "/usr/bin/mysql -u root -p'OpenMRS' < /tmp/openmrs.sql",
-    require =>  File["/tmp/openmrs.sql"],
   }
 }
