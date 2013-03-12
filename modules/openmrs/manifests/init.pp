@@ -49,11 +49,4 @@ class openmrs {
     group => "tomcat6",
     require => File["/usr/share/tomcat6/.OpenMRS"],
   }
-
-  file { "/tmp/openmrs.sql":
-    ensure => present,
-    source => "file://${::work_dir}/modules/openmrs/files/openmrs.sql",
-    owner => "root",
-    group => "root",
-  }
 }
