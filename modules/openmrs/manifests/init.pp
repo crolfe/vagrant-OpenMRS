@@ -41,12 +41,4 @@ class openmrs {
     group => "tomcat6",
     require => Package["tomcat6"],
   }
-
-  file { "/usr/share/tomcat6/.OpenMRS/openmrs-runtime.properties":
-    ensure => present,
-    source => "file://${::work_dir}/modules/openmrs/files/openmrs-runtime.properties",
-    owner => "tomcat6",
-    group => "tomcat6",
-    require => File["/usr/share/tomcat6/.OpenMRS"],
-  }
 }
