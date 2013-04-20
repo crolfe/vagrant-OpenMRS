@@ -38,7 +38,7 @@ Installation & setup instructions
         git config --global user.name "John Doe"
         git config --global user.email johndoe@example.com
 
-17. Clone the cpm code: ```git clone https://github.com/johnsyweb/openmrs-cpm.git```
+17. Clone the cpm code: ```git clone https://github.com/OpenMRS-Australia/openmrs-cpm.git```
 18. Change to openmrs-cpm
 19. Compile the cpm module: ```./go package```
 20. Once complete, install the module:
