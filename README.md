@@ -11,14 +11,14 @@ The following will be installed and setup for you:
 - git
 - vim
 - OpenMRS 1.9.2 war file (deployed to /var/lib/tomcat/webapps)
-
+- nodeJS (with grunt-cli and bower packages installed globally)
 
 Installation & setup instructions
 =================================
 1. Ensure your laptop is plugged in and connected to the Internet  :)
 2. Install VirtualBox: https://www.virtualbox.org/wiki/Downloads
 3. Install Vagrant: http://downloads.vagrantup.com/tags/v1.0.6
-4. Clone this repository: https://github.com/crolfe/vagrant-OpenMRS
+4. Clone this repository: https://github.com/OpenMRS-Australia/openmrs-vagrant
 5. From the command line, change to the ```vagrant-OpenMRS``` directory
 6. Type ```vagrant up```
 7. Allow time (+/- 20 minutes) for the base image and packages to download and install.  It may look like it has hung or stopped working at times, but that's just part of the process - be patient!    
@@ -38,7 +38,8 @@ Installation & setup instructions
         git config --global user.name "John Doe"
         git config --global user.email johndoe@example.com
 
-17. Clone the cpm code: ```git clone https://github.com/OpenMRS-Australia/openmrs-cpm.git```
+17. Fork ```https://github.com/OpenMRS-Australia/openmrs-cpm.git```
+17. Clone the cpm code: ```git clone your_openmrs-cpm_fork```
 18. Change to openmrs-cpm
 19. Compile the cpm module: ```./go package```
 20. Once complete, install the module:
