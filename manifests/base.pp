@@ -22,3 +22,5 @@ include mysql
 include tomcat
 include openmrs
 include avahi-daemon
+include firefox
+include xvfb
