@@ -39,5 +39,8 @@ Vagrant::Config.run do |config|
     puppet.module_path = "modules"
      puppet.manifests_path = "manifests"
      puppet.manifest_file  = "base.pp"
-   end
+  end
+   
+  config.vm.provision :shell, :path => "setup.sh"
+   
 end
