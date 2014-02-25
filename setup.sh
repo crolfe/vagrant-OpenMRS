@@ -1,0 +1,1 @@
+echo "export DISPLAY=:1" >> /home/vagrant/.bashrc

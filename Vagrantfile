@@ -32,12 +32,15 @@ Vagrant::Config.run do |config|
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
-  config.vm.share_folder "code", "/vagrant/code", "code"
+  config.vm.share_folder "code", "/vagrant/code", "code", :create => true
 
   # Set Vagrant to use Puppet for provisioning and where to find the manifests/modules
   config.vm.provision :puppet do |puppet|
     puppet.module_path = "modules"
      puppet.manifests_path = "manifests"
      puppet.manifest_file  = "base.pp"
-   end
+  end
+   
+  config.vm.provision :shell, :path => "setup.sh"
+   
 end
