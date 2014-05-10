@@ -20,7 +20,7 @@ Installation & setup instructions
 3. Install Vagrant: http://downloads.vagrantup.com/tags/v1.0.6
 4. Clone this repository: https://github.com/OpenMRS-Australia/openmrs-vagrant
 5. From the command line, change to the ```vagrant-OpenMRS``` directory
-6. Type ```vagrant up```
+6. Type ```vagrant up --provision```
 7. Allow time (+/- 20 minutes) for the base image and packages to download and install.  It may look like it has hung or stopped working at times, but that's just part of the process - be patient!    
 8. You will see errors on the last step for now, but that's OK. I plan on fixing this though! http://i.imgur.com/xwsi5Vk.png
 9. Connect to the box:
