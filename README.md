@@ -26,35 +26,33 @@ The following will be installed and setup for you:
 -----------------------------------------------
 1. Ensure your computer is plugged in and connected to the Internet :)
 
-2. Install the current supported version of Java, please refer to [https://wiki.openmrs.org/display/docs/Step+2+-+Install+Java](https://wiki.openmrs.org/display/docs/Step+2+-+Install+Java) 
+2. Download and Install the latest VirtualBox: [https://www.virtualbox.org/wiki/Downloads ](https://www.virtualbox.org/wiki/Downloads )
 
-3. Download and Install the latest VirtualBox: [https://www.virtualbox.org/wiki/Downloads ](https://www.virtualbox.org/wiki/Downloads )
+3. Download and Install the latest Vagrant: [http://www.vagrantup.com/](http://www.vagrantup.com/)
 
-4. Download and Install the latest Vagrant: [http://www.vagrantup.com/](http://www.vagrantup.com/)
+4. Go and login to Github: [https://github.com](https://github.com) (If you do not have a Github account, please sign up for Github to login)
 
-5. Go and login to Github: [https://github.com](https://github.com) (If you do not have a Github account, please sign up for Github to login)
-
-6. Once you have logged in to Github, go to "Set up Git" in your Github User Interface 
+5. Once you have logged in to Github, go to "Set up Git" in your Github User Interface 
 	*	Set up Git (image) [http://i.imgur.com/9xFDKnb.png](http://i.imgur.com/9xFDKnb.png)
 
-7. From there, Download and Install Git (or go to[ http://git-scm.com/downloads](http://git-scm.com/downloads))
+6. From there, Download and Install Git (or go to[ http://git-scm.com/downloads](http://git-scm.com/downloads))
 
-8. Go to [https://github.com/OpenMRS-Australia/openmrs-vagrant.git](https://github.com/OpenMRS-Australia/openmrs-vagrant.git) and press the Fork button (which you will find at the top right hand side of your screen)
+7. Go to [https://github.com/OpenMRS-Australia/openmrs-vagrant.git](https://github.com/OpenMRS-Australia/openmrs-vagrant.git) and press the Fork button (which you will find at the top right hand side of your screen)
 
-9. Clone this repository at the *command line* (or at Git Shell if you cannot use Git commands in the command line. Go to *terminal* if using a Mac) ```git clone https://github.com/your_github_username/openmrs-vagrant.git```  **OR** go to [https://github.com](https://github.com), login to your account, go for your repositories, click **openmrs-vagrant** and click the "**Clone in Desktop**" button on the right hand side of the page
+8. Clone this repository at the *command line* (or at Git Shell if you cannot use Git commands in the command line. Go to *terminal* if using a Mac) ```git clone https://github.com/your_github_username/openmrs-vagrant.git```  **OR** go to [https://github.com](https://github.com), login to your account, go for your repositories, click **openmrs-vagrant** and click the "**Clone in Desktop**" button on the right hand side of the page
 	*	Github openmrs-vagrant cloning (image): [http://i.imgur.com/YrFlHMa.png](http://i.imgur.com/YrFlHMa.png)
 
-10. Open the command line and head to the ```vagrant-OpenMRS``` directory (this can  be found in the ```Github``` directory)
+9. Open the command line and head to the ```vagrant-OpenMRS``` directory (this can  be found in the ```Github``` directory)
 
-11. Type ```vagrant up``` 
+10. Type ```vagrant up``` 
 	*	vagrant up (image): [http://i.imgur.com/F6xM8gI.png](http://i.imgur.com/F6xM8gI.png)
 	*	vagrant up finished (image): [http://i.imgur.com/scymAAR.png](http://i.imgur.com/scymAAR.png)
 
-12. Allow time (+/- 20 minutes) for the base image and packages to download and install. It may look like it has hung or stopped working at times, but that's just part of the process - be patient!
+11. Allow time (+/- 20 minutes) for the base image and packages to download and install. It may look like it has hung or stopped working at times, but that's just part of the process - be patient!
 
-13. You might see errors on the last step, but that's OK. I plan on fixing this though! [http://i.imgur.com/xwsi5Vk.png](http://i.imgur.com/xwsi5Vk.png)
+12. You might see errors on the last step, but that's OK. I plan on fixing this though! [http://i.imgur.com/xwsi5Vk.png](http://i.imgur.com/xwsi5Vk.png)
 
-14. Connect to the box: 
+13. Connect to the box: 
 	*	Linux or OS X type this to connect to the box: ```vagrant ssh```
 
 	*  Windows, you will need an ssh client like Putty: [http://www.putty.org/](http://www.putty.org/)
@@ -67,24 +65,22 @@ The following will be installed and setup for you:
 	*	Putty (image): [http://i.imgur.com/XEk95VE.png](http://i.imgur.com/XEk95VE.png)
 	*	Putty (image 2) [https://openmrsau.imgur.com/all/](https://openmrsau.imgur.com/all/)
 
-15. Restart the avahi-daemon service: ```sudo service avahi-daemon restart```
+14. Restart the avahi-daemon service: ```sudo service avahi-daemon restart```
 	*	Restart (image): [http://i.imgur.com/oKJGmrX.png](http://i.imgur.com/oKJGmrX.png)
 
-16. Within a web browser on your host machine, go to this URL to install the OpenMRS core (this step will lead to the installation wizard):
-	*	[http://openmrs-dev.local:8080/openmrs](http://openmrs-dev.local:8080/openmrs)
-	*	if that doesn't work try [http://192.168.33.10:8080/openmrs](http://192.168.33.10:8080/openmrs)
-		*	if that works add ```192.168.33.10 openmrs-dev.local``` to hosts file (/etc/hosts or %SystemRoot%\system32\drivers\etc\hosts)
+15. Within a web browser on your host machine, go to this URL to install the OpenMRS core (this step will lead to the installation wizard):
+	*	Open [http://192.168.33.10:8080/openmrs](http://192.168.33.10:8080/openmrs)
 
-17. In the installation wizard, for the question "Which type of installation do you want?", choose "**Simple**" and press the right arrow button
+16. In the installation wizard, for the question "Which type of installation do you want?", choose "**Simple**" and press the right arrow button
 	*	Installation steps (image): [http://i.imgur.com/UAENpg4.png](http://i.imgur.com/UAENpg4.png)
 	
-18. Enter the MySQL password: **OpenMRS**
+17. Enter the MySQL password: **OpenMRS**
 (Make note that the default admin credentials for this site is: *admin/Admin123*)
 
-19. In the installation wizard, for the question "Do you want to also add demo data to your database - openmrs?", choose "**Yes**" and press the right arrow button
+18. In the installation wizard, for the question "Do you want to also add demo data to your database - openmrs?", choose "**Yes**" and press the right arrow button
 	*	Installation steps (image): [http://i.imgur.com/9ySYkFO.png](http://i.imgur.com/9ySYkFO.png)
 	
-20. Review the information and press the right arrow button (It will now install the OpenMRS core)
+19. Review the information and press the right arrow button (It will now install the OpenMRS core)
 	*	Installation review (image): [http://i.imgur.com/jZUbLgN.png](http://i.imgur.com/jZUbLgN.png)
 	*	Installation of OpenMRS core (image): [http://i.imgur.com/DEAthnA.png](http://i.imgur.com/DEAthnA.png) 
 
