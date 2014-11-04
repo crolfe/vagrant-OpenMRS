@@ -14,10 +14,12 @@ Vagrant::Config.run do |config|
   config.vm.host_name = "openmrs-dev"
 
   config.vm.box = "precise32"
+  #config.vm.box = "openmrs-dev"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   config.vm.box_url = "http://files.vagrantup.com/precise32.box"
+  #config.vm.box_url = "./openmrs-dev.box"
 
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
@@ -39,5 +41,8 @@ Vagrant::Config.run do |config|
     puppet.module_path = "modules"
      puppet.manifests_path = "manifests"
      puppet.manifest_file  = "base.pp"
-   end
+  end
+   
+  config.vm.provision :shell, :path => "setup.sh"
+   
 end
